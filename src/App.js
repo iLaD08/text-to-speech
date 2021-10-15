@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import AudioForm from "./components/audio-form";
+import Speech from "./components/speech";
 import "./App.css";
 
 const App = () => {
@@ -6,30 +8,17 @@ const App = () => {
   const [audio, setAudio] = useState(null);
   const key = "f14c43fb64bc41f2b6818ad05c98aabc";
 
-  const handleRequest = () =>
-    setAudio(`http://api.voicerss.org/?key=${key}&hl=en-us&src=${text}`);
-
   return (
     <div className="App">
       <div className="top">
         <h1>Text to speech</h1>
-        <div className="audio-form">
-          <input
-            value={text}
-            onChange={(e) => setText(e.target.value)}
-            placeHolder="Type text here..."
-          />
-          <button onClick={handleRequest}>Send</button>
-        </div>
-      </div>
-      <div className="audio">
-        <iframe
-          title="yay"
-          src={audio}
-          width="300"
-          height="150"
-          frameborder="0"
+        <AudioForm
+          Key={key}
+          text={text}
+          setText={setText}
+          setAudio={setAudio}
         />
+        <Speech audio={audio} />
       </div>
     </div>
   );

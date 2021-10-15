@@ -10,12 +10,11 @@
 }
 
 .top {
-  position: relative;
-  top: 180px;
+  margin-top: 22vh;
   text-align: center;
 }
 
-h1 {
+.top h1 {
   margin-bottom: 2.5vh;
 }
 
@@ -37,7 +36,6 @@ button {
 }
 
 .audio {
-  position: relative;
-  top: 250px;
+  margin-top: 15vh;
   text-align: center;
 }
